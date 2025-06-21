@@ -7,7 +7,14 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:watch": "jest --watchAll"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
   },
   "keywords": [],
   "author": "",
@@ -19,7 +26,11 @@
     "express": "^5.1.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.27.4",
+    "@babel/preset-env": "^7.27.2",
+    "babel-jest": "^30.0.2",
     "eslint": "^9.29.0",
+    "jest": "^30.0.2",
     "prisma": "^6.10.1"
   }
 }
